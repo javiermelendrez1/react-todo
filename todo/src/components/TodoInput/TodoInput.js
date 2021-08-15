@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-const TodoInput = () => {
+const TodoInput = ({todoArray, setTodoArray, addTodo}) => {
     //going to create a state for the user todo
     const[usertask, setUsertask] = useState(''); //by default task is empty string
     //create a handler to track the user task being entered
@@ -13,6 +13,8 @@ const TodoInput = () => {
     const submitHandler = (e) => {
         //
         e.preventDefault(); //prevent the page from refreshing
+        //add the todo to the array
+        addTodo(usertask);
         //set the user task to a blank string again to empty out the input form
         setUsertask('');
     }
