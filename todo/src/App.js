@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
     <TodoInput todoArray={todoArray} setTodoArray={setTodoArray} addTodo={addTodo}/>
-    <TodoList todoArray={todoArray}/>
+    <TodoList todoArray={todoArray} setTodoArray={setTodoArray}/>
     </div>
   );
 }

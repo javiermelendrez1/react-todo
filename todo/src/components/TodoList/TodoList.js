@@ -3,7 +3,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import  DeleteButton  from '../DeleteButton/DeleteButton';
-const TodoList = ({todoArray}) => {
+const TodoList = ({todoArray, setTodoArray}) => {
     //going to be returning a list 
     //going to have to keep mapping to print every list
 
@@ -23,7 +23,7 @@ const TodoList = ({todoArray}) => {
             return (
               <ListItem key={value} button>
                 <ListItemText primary={value} />
-                <DeleteButton />
+                <DeleteButton todoArray={todoArray} setTodoArray={setTodoArray} value={value}/>
               </ListItem>
             );
           })}
