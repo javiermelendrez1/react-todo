@@ -6,7 +6,7 @@ import React from 'react';
 //use the new array to render another todo list
 import Checkbox from '@material-ui/core/Checkbox';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-const CheckButton = ({ isChecked, setIsChecked}) => {
+const CheckButton = ({ isChecked, setIsChecked, theValue, setValue}) => {
     //create a function to handle the click
     const handleClick = () => {
         //
@@ -14,9 +14,11 @@ const CheckButton = ({ isChecked, setIsChecked}) => {
         //depending if the user checks or unchecks we set check
         if(isChecked){
             setIsChecked(false);
+            setValue('');
 
         } else {
             setIsChecked(true);
+            setValue(theValue);
         }
     }
     return (
